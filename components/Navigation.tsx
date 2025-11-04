@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,43 +11,64 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Menu, X, HardHat, Home, Building, Wrench, Hammer, Paintbrush } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
+} from "@/components/ui/navigation-menu";
+import {
+  Menu,
+  X,
+  HardHat,
+  Home,
+  Building,
+  Wrench,
+  Hammer,
+  Paintbrush,
+} from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface NavigationProps {
-  onGetQuote: () => void
+  onGetQuote: () => void;
 }
 
 export function Navigation({ onGetQuote }: NavigationProps) {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
-  ]
+  ];
 
   const servicesDropdown = [
-    { label: "Residential Construction", href: "/services#residential", icon: Home },
-    { label: "Commercial Construction", href: "/services#commercial", icon: Building },
+    {
+      label: "Residential Construction",
+      href: "/services#residential",
+      icon: Home,
+    },
+    {
+      label: "Commercial Construction",
+      href: "/services#commercial",
+      icon: Building,
+    },
     { label: "Renovations", href: "/services#renovations", icon: Wrench },
     { label: "Custom Builds", href: "/services#custom-builds", icon: Hammer },
-    { label: "Finishing & Design", href: "/services#finishing", icon: Paintbrush },
-  ]
+    {
+      label: "Finishing & Design",
+      href: "/services#finishing",
+      icon: Paintbrush,
+    },
+  ];
 
   return (
     <>
@@ -68,8 +89,12 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                 <HardHat className="w-5 h-5 text-white" />
               </div>
               <div className="hidden sm:block">
-                <div className="font-bold text-lg text-white font-technor drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">BernMar</div>
-                <div className="text-xs text-blue-200 -mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">Construction</div>
+                <div className="font-bold text-lg text-white font-technor drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                  BernMar
+                </div>
+                <div className="text-xs text-blue-200 -mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                  Construction
+                </div>
               </div>
             </Link>
 
@@ -85,8 +110,8 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                             navigationMenuTriggerStyle(),
                             "font-medium transition-colors",
                             pathname === item.href
-                              ? "text-white bg-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
-                              : "text-white/95 hover:text-white hover:bg-white/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                              ? "text-black bg-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                              : "text-black/95 hover:text-blue-500 hover:bg-white/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
                           )}
                         >
                           {item.label}
@@ -97,18 +122,20 @@ export function Navigation({ onGetQuote }: NavigationProps) {
 
                   {/* Services Dropdown */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn(
-                      "font-medium transition-colors",
-                      pathname.startsWith("/services")
-                        ? "text-white bg-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
-                        : "text-white/95 hover:text-white hover:bg-white/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
-                    )}>
+                    <NavigationMenuTrigger
+                      className={cn(
+                        "font-medium transition-colors",
+                        pathname.startsWith("/services")
+                          ? "text-white bg-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                          : "text-white/95 hover:text-white hover:bg-white/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                      )}
+                    >
                       Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 bg-white">
                         {servicesDropdown.map((service) => {
-                          const Icon = service.icon
+                          const Icon = service.icon;
                           return (
                             <li key={service.href}>
                               <Link href={service.href} legacyBehavior passHref>
@@ -117,15 +144,18 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                                     <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
                                       <Icon className="w-4 h-4" />
                                     </div>
-                                    <div className="text-sm font-medium leading-none text-primary">{service.label}</div>
+                                    <div className="text-sm font-medium leading-none text-primary">
+                                      {service.label}
+                                    </div>
                                   </div>
                                   <p className="line-clamp-2 text-sm leading-snug text-gray-600 mt-2">
-                                    Professional {service.label.toLowerCase()} services
+                                    Professional {service.label.toLowerCase()}{" "}
+                                    services
                                   </p>
                                 </NavigationMenuLink>
                               </Link>
                             </li>
-                          )
+                          );
                         })}
                       </ul>
                     </NavigationMenuContent>
@@ -177,7 +207,7 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`text-2xl font-semibold hover:text-secondary transition-colors ${
-                    pathname === item.href ? 'text-secondary' : 'text-white'
+                    pathname === item.href ? "text-secondary" : "text-white"
                   }`}
                 >
                   {item.label}
@@ -191,8 +221,8 @@ export function Navigation({ onGetQuote }: NavigationProps) {
             >
               <Button
                 onClick={() => {
-                  onGetQuote()
-                  setIsMobileMenuOpen(false)
+                  onGetQuote();
+                  setIsMobileMenuOpen(false);
                 }}
                 size="lg"
                 className="bg-secondary hover:bg-secondary/90 text-white"
@@ -207,5 +237,5 @@ export function Navigation({ onGetQuote }: NavigationProps) {
       {/* Spacer */}
       <div className="h-16 md:h-20"></div>
     </>
-  )
+  );
 }
