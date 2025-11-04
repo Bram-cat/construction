@@ -68,8 +68,8 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                 <HardHat className="w-5 h-5 text-white" />
               </div>
               <div className="hidden sm:block">
-                <div className="font-bold text-lg text-white font-technor">BernMar</div>
-                <div className="text-xs text-blue-200 -mt-1">Construction</div>
+                <div className="font-bold text-lg text-white font-technor drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">BernMar</div>
+                <div className="text-xs text-blue-200 -mt-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">Construction</div>
               </div>
             </Link>
 
@@ -85,8 +85,8 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                             navigationMenuTriggerStyle(),
                             "font-medium transition-colors",
                             pathname === item.href
-                              ? "text-white bg-secondary"
-                              : "text-blue-100 hover:text-white hover:bg-white/10"
+                              ? "text-white bg-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                              : "text-white/95 hover:text-white hover:bg-white/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
                           )}
                         >
                           {item.label}
@@ -100,8 +100,8 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                     <NavigationMenuTrigger className={cn(
                       "font-medium transition-colors",
                       pathname.startsWith("/services")
-                        ? "text-white bg-secondary"
-                        : "text-blue-100 hover:text-white hover:bg-white/10"
+                        ? "text-white bg-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                        : "text-white/95 hover:text-white hover:bg-white/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
                     )}>
                       Services
                     </NavigationMenuTrigger>

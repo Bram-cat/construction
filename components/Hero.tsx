@@ -65,9 +65,9 @@ export function Hero({ onGetQuote }: HeroProps) {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6">
-              <HardHat className="w-5 h-5 text-secondary" />
-              <span className="text-white text-sm font-medium">Professional Construction Services in PEI</span>
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/30">
+              <HardHat className="w-5 h-5 text-blue-300" />
+              <span className="text-white text-sm font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">Professional Construction Services in PEI</span>
             </div>
           </motion.div>
 
@@ -75,17 +75,17 @@ export function Hero({ onGetQuote }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-technor leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-technor leading-tight"
           >
-            Building Excellence,{" "}
-            <span className="text-secondary">One Project at a Time</span>
+            <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Building Excellence,</span>{" "}
+            <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,102,204,0.5)]">One Project at a Time</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
             From residential homes to commercial buildings, we deliver quality craftsmanship and reliable service across Prince Edward Island.
           </motion.p>

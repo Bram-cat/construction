@@ -34,10 +34,10 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <div>
                   <a
-                    href="tel:9029401234"
+                    href="tel:9023703112"
                     className="block text-blue-100 hover:text-white transition-colors mb-1"
                   >
-                    (902) 940-1234
+                    (902) 370-3112
                   </a>
                 </div>
               </div>
@@ -45,18 +45,18 @@ export function Footer() {
                 <Mail className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <div>
                   <a
-                    href="mailto:info@bernmarconstruction.com"
-                    className="block text-blue-100 hover:text-white transition-colors"
+                    href="mailto:mark@bernmarconstruction.com"
+                    className="block text-blue-100 hover:text-white transition-colors text-sm"
                   >
-                    info@bernmarconstruction.com
+                    mark@bernmarconstruction.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <div className="text-blue-100">
-                  Prince Edward Island,<br />
-                  Canada
+                  345 Brackley Point Road<br />
+                  Rte 15, Prince Edward Island
                 </div>
               </div>
             </div>

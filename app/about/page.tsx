@@ -8,8 +8,8 @@ import { QuoteDialog } from "@/components/QuoteDialog"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
-  Sparkles, Shield, Users, ThumbsUp, Award, Clock, Heart,
-  CheckCircle, Phone, Mail, MapPin, Star
+  HardHat, Shield, Users, ThumbsUp, Award, Clock, Handshake,
+  CheckCircle, Phone, Mail, MapPin, Star, Building2, Wrench
 } from "lucide-react"
 import Image from "next/image"
 
@@ -17,83 +17,68 @@ const values = [
   {
     icon: Shield,
     title: "Integrity",
-    description: "We believe in honest, transparent service. No hidden fees, no surprises—just straightforward pricing and reliable work.",
-    color: "from-blue-500 to-cyan-500"
+    description: "We believe in honest, transparent service. Clear communication, fair pricing, and reliable work you can count on.",
+    color: "from-blue-600 to-blue-400"
   },
   {
     icon: Award,
     title: "Excellence",
-    description: "We&apos;re committed to delivering exceptional results on every job. Our team takes pride in exceeding expectations.",
-    color: "from-purple-500 to-indigo-500"
+    description: "We&apos;re committed to delivering exceptional craftsmanship on every project. Quality work is our signature.",
+    color: "from-indigo-600 to-blue-500"
   },
   {
-    icon: Heart,
-    title: "Care",
-    description: "Your property is important to you, and it&apos;s important to us. We treat every home and business with respect and attention.",
-    color: "from-red-500 to-pink-500"
+    icon: Handshake,
+    title: "Reliability",
+    description: "Your project matters to you, and it matters to us. We deliver on time, on budget, with the quality you deserve.",
+    color: "from-cyan-600 to-blue-500"
   },
   {
     icon: Users,
     title: "Community",
-    description: "As a locally operated business, we&apos;re invested in our PEI community and dedicated to serving our neighbors.",
-    color: "from-green-500 to-emerald-500"
+    description: "As a locally operated business in PEI, we&apos;re invested in our community and dedicated to building lasting relationships.",
+    color: "from-blue-500 to-indigo-500"
   }
 ]
 
 const stats = [
-  { number: "500+", label: "Properties Cleaned", icon: CheckCircle },
+  { number: "10+", label: "Years Combined Experience", icon: Award },
+  { number: "100+", label: "Projects Completed", icon: CheckCircle },
   { number: "5.0", label: "Star Rating", icon: Star },
-  { number: "100%", label: "Satisfaction Rate", icon: ThumbsUp },
-  { number: "3+", label: "Years Experience", icon: Award }
-]
-
-const team = [
-  {
-    name: "Pathik Pandya",
-    role: "Co-Founder & Operations",
-    phone: "705-822-8605",
-    image: "/images/5.jpg"
-  },
-  {
-    name: "Atmiya Patel",
-    role: "Co-Founder & Customer Relations",
-    phone: "705-970-4920",
-    image: "/images/6.jpg"
-  }
+  { number: "100%", label: "Client Satisfaction", icon: ThumbsUp }
 ]
 
 export default function AboutPage() {
   const [isQuoteDialogOpen, setIsQuoteDialogOpen] = useState(false)
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <Navigation onGetQuote={() => setIsQuoteDialogOpen(true)} />
 
       {/* About Hero Banner */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/7.jpg"
-            alt="About Washly Washing Services"
+            src="/images/4.png"
+            alt="BernMar Construction Projects"
             fill
             className="object-cover brightness-[0.4]"
             priority
           />
         </div>
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/80 via-primary/60 to-blue-900/80"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/80 via-primary/60 to-primary/80"></div>
         <motion.div
           className="relative z-10 text-center text-white container mx-auto px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-secondary/30">
-            <Sparkles className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium text-secondary">Locally Operated in PEI</span>
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/30">
+            <HardHat className="w-5 h-5 text-blue-300" />
+            <span className="text-sm font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">Serving PEI Since Day One</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">About Washly</h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Your trusted partner for professional cleaning services across Prince Edward Island
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 font-technor drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">About BernMar</h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            Your trusted partner for quality construction services across Prince Edward Island
           </p>
         </motion.div>
       </section>
@@ -108,24 +93,19 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Our Story</h2>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-technor">Our Story</h2>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Washly Washing Services was founded with a simple mission: to provide Prince Edward Island
-                  with exceptional cleaning services that combine professionalism, reliability, and genuine care.
+                  <span className="font-semibold text-primary">BernMar Construction</span> is a locally operated construction company proudly serving Prince Edward Island. Located at 345 Brackley Point Road, Route 15, we specialize in both residential and commercial construction projects.
                 </p>
                 <p>
-                  As a locally operated business, we understand the unique needs of PEI property owners. Whether
-                  it&apos;s the salt air affecting your windows or the seasonal debris in your gutters, we&apos;ve seen
-                  it all and know how to handle it.
+                  From the start, our mission has been simple: to deliver quality construction services with integrity, professionalism, and a commitment to excellence. Whether you&apos;re building your dream home, renovating an existing space, or developing a commercial property, we bring the expertise and dedication needed to bring your vision to life.
                 </p>
                 <p>
-                  What started as a passion for helping neighbors maintain their properties has grown into a
-                  trusted service that hundreds of islanders rely on. We&apos;re proud to be part of this community
-                  and committed to earning your trust with every job.
+                  Our team combines years of construction experience with a deep understanding of local building requirements and conditions. We take pride in using quality materials, proven construction methods, and maintaining clear communication throughout every phase of your project.
                 </p>
                 <p className="font-semibold text-primary">
-                  Our goal is simple: to make your property shine brighter, together.
+                  At BernMar Construction, we don&apos;t just build structures—we build lasting relationships with our clients and our community.
                 </p>
               </div>
             </motion.div>
@@ -139,8 +119,8 @@ export default function AboutPage() {
               whileHover={{ scale: 1.02 }}
             >
               <Image
-                src="/images/8.jpg"
-                alt="Washly team at work"
+                src="/images/5.png"
+                alt="BernMar Construction work"
                 fill
                 className="object-cover"
               />
@@ -164,10 +144,10 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary to-blue-900 flex items-center justify-center">
-                    <Icon className="w-8 h-8 text-secondary" />
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-secondary to-blue-400 flex items-center justify-center shadow-lg">
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
+                  <div className="text-4xl md:text-5xl font-bold text-primary mb-2 font-technor">{stat.number}</div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
                 </motion.div>
               )
@@ -186,9 +166,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Our Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-technor">Our Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These core principles guide everything we do, from how we interact with customers to
+              These core principles guide everything we do, from how we interact with clients to
               the quality of work we deliver
             </p>
           </motion.div>
@@ -204,12 +184,12 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/40">
                     <CardContent className="p-8">
                       <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center shadow-lg`}>
                         <Icon className="w-8 h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-primary mb-4">{value.title}</h3>
+                      <h3 className="text-2xl font-bold text-primary mb-4 font-technor">{value.title}</h3>
                       <p className="text-gray-600 leading-relaxed">{value.description}</p>
                     </CardContent>
                   </Card>
@@ -220,8 +200,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Meet the Team */}
-      <section className="py-20 bg-gradient-to-br from-primary to-blue-900 text-white relative overflow-hidden">
+      {/* Contact Information */}
+      <section className="py-20 bg-gradient-to-br from-primary to-primary/90 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-secondary rounded-full filter blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
@@ -235,43 +215,70 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Meet Our Founders</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-technor">Get In Touch</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              The dedicated team behind Washly Washing Services
+              Ready to start your project? We&apos;re here to help bring your vision to life
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300 overflow-hidden">
-                  <div className="relative h-64">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center">
+                    <Phone className="w-8 h-8 text-white" />
                   </div>
-                  <CardContent className="p-6 text-center">
-                    <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                    <p className="text-blue-200 mb-4">{member.role}</p>
-                    <div className="flex items-center justify-center gap-2 text-secondary">
-                      <Phone className="w-4 h-4" />
-                      <a href={`tel:${member.phone}`} className="hover:underline">
-                        {member.phone}
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                  <h3 className="text-xl font-bold mb-2 font-technor">Phone</h3>
+                  <a href="tel:9023703112" className="text-blue-200 hover:text-white transition-colors">
+                    (902) 370-3112
+                  </a>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center">
+                    <Mail className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 font-technor">Email</h3>
+                  <a href="mailto:mark@bernmarconstruction.com" className="text-blue-200 hover:text-white transition-colors break-all">
+                    mark@bernmarconstruction.com
+                  </a>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 font-technor">Location</h3>
+                  <p className="text-blue-200">
+                    345 Brackley Point Road<br />
+                    Rte 15, PEI
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -286,9 +293,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Why Choose Washly?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-technor">Why Choose BernMar?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Here&apos;s what sets us apart from other cleaning services in PEI
+              Here&apos;s what sets us apart from other construction companies in PEI
             </p>
           </motion.div>
 
@@ -301,13 +308,13 @@ export default function AboutPage() {
               },
               {
                 icon: Clock,
-                title: "Reliable & Punctual",
-                description: "We value your time. When we say we&apos;ll be there, we will be—ready to work and deliver results."
+                title: "On-Time Delivery",
+                description: "We respect your time and budget. Our projects are completed on schedule without compromising quality."
               },
               {
                 icon: ThumbsUp,
-                title: "100% Satisfaction Guaranteed",
-                description: "We&apos;re not happy until you&apos;re happy. If something isn&apos;t right, we&apos;ll make it right."
+                title: "Quality Guaranteed",
+                description: "We stand behind our work with a commitment to excellence. If it&apos;s not right, we&apos;ll make it right."
               }
             ].map((item, index) => {
               const Icon = item.icon
@@ -319,12 +326,12 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-secondary/40">
                     <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary to-blue-900 flex items-center justify-center shadow-lg">
-                        <Icon className="w-8 h-8 text-secondary" />
+                      <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-secondary to-blue-400 flex items-center justify-center shadow-lg">
+                        <Icon className="w-8 h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-primary mb-4">{item.title}</h3>
+                      <h3 className="text-2xl font-bold text-primary mb-4 font-technor">{item.title}</h3>
                       <p className="text-gray-600 leading-relaxed">{item.description}</p>
                     </CardContent>
                   </Card>
@@ -336,7 +343,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-blue-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-primary to-primary/90 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary rounded-full filter blur-3xl"></div>
         </div>
@@ -349,18 +356,18 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-technor">Ready to Get Started?</h2>
             <p className="text-xl text-blue-100 mb-8">
-              Experience the Washly difference. Contact us today for a free quote and see why PEI
-              homeowners trust us with their properties.
+              Experience the BernMar difference. Contact us today for a free consultation and see why PEI
+              property owners trust us with their construction projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
                 onClick={() => setIsQuoteDialogOpen(true)}
-                className="bg-secondary text-primary hover:bg-secondary/90 text-lg px-8 py-6 h-auto font-semibold shadow-xl hover:shadow-2xl transition-all"
+                className="bg-secondary text-white hover:bg-secondary/90 text-lg px-8 py-6 h-auto font-semibold shadow-xl hover:shadow-2xl transition-all"
               >
-                Get a Free Quote
+                Get a Free Consultation
               </Button>
               <Button
                 size="lg"
@@ -368,7 +375,7 @@ export default function AboutPage() {
                 asChild
                 className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-lg px-8 py-6 h-auto font-semibold backdrop-blur-sm"
               >
-                <a href="tel:705-822-8605">
+                <a href="tel:9023703112">
                   <Phone className="w-5 h-5 mr-2" />
                   Call Us Now
                 </a>
