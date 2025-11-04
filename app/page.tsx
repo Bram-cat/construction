@@ -4,8 +4,7 @@ import { useState } from "react"
 import { Navigation } from "@/components/Navigation"
 import { Hero } from "@/components/Hero"
 import { FeaturedServices } from "@/components/FeaturedServices"
-import { WhyChooseUs } from "@/components/WhyChooseUs"
-import { Testimonials } from "@/components/Testimonials"
+import { About } from "@/components/About"
 import { Footer } from "@/components/Footer"
 import { QuoteDialog } from "@/components/QuoteDialog"
 
@@ -17,8 +16,7 @@ export default function Home() {
       <Navigation onGetQuote={() => setIsQuoteDialogOpen(true)} />
       <Hero onGetQuote={() => setIsQuoteDialogOpen(true)} />
       <FeaturedServices onGetQuote={() => setIsQuoteDialogOpen(true)} />
-      <WhyChooseUs />
-      <Testimonials />
+      <About />
       <Footer />
       <QuoteDialog open={isQuoteDialogOpen} onOpenChange={setIsQuoteDialogOpen} />
     </main>

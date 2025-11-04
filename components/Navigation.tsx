@@ -12,7 +12,7 @@ import {
   NavigationMenuContent,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Menu, X, Sparkles, Droplets, Wind, Waves, Home } from "lucide-react"
+import { Menu, X, HardHat, Home, Building, Wrench, Hammer, Paintbrush } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -42,10 +42,11 @@ export function Navigation({ onGetQuote }: NavigationProps) {
   ]
 
   const servicesDropdown = [
-    { label: "Window Cleaning", href: "/services#window-cleaning", icon: Droplets },
-    { label: "Gutter Cleaning", href: "/services#gutter-cleaning", icon: Wind },
-    { label: "Pressure Washing", href: "/services#pressure-washing", icon: Waves },
-    { label: "Roof Cleaning", href: "/services#roof-cleaning", icon: Home },
+    { label: "Residential Construction", href: "/services#residential", icon: Home },
+    { label: "Commercial Construction", href: "/services#commercial", icon: Building },
+    { label: "Renovations", href: "/services#renovations", icon: Wrench },
+    { label: "Custom Builds", href: "/services#custom-builds", icon: Hammer },
+    { label: "Finishing & Design", href: "/services#finishing", icon: Paintbrush },
   ]
 
   return (
@@ -53,7 +54,7 @@ export function Navigation({ onGetQuote }: NavigationProps) {
       <motion.nav
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled ? "bg-white shadow-lg" : "bg-white/95 backdrop-blur-md"
+          isScrolled ? "bg-primary shadow-lg" : "bg-primary/95 backdrop-blur-md"
         )}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -63,12 +64,12 @@ export function Navigation({ onGetQuote }: NavigationProps) {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-blue-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Sparkles className="w-5 h-5 text-secondary" />
+              <div className="w-10 h-10 bg-gradient-to-br from-secondary to-blue-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <HardHat className="w-5 h-5 text-white" />
               </div>
               <div className="hidden sm:block">
-                <div className="font-bold text-lg text-primary">Washly</div>
-                <div className="text-xs text-gray-600 -mt-1">Washing Services</div>
+                <div className="font-bold text-lg text-white font-technor">BernMar</div>
+                <div className="text-xs text-blue-200 -mt-1">Construction</div>
               </div>
             </Link>
 
@@ -84,8 +85,8 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                             navigationMenuTriggerStyle(),
                             "font-medium transition-colors",
                             pathname === item.href
-                              ? "text-primary bg-accent"
-                              : "text-gray-700 hover:text-primary"
+                              ? "text-white bg-secondary"
+                              : "text-blue-100 hover:text-white hover:bg-white/10"
                           )}
                         >
                           {item.label}
@@ -99,26 +100,26 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                     <NavigationMenuTrigger className={cn(
                       "font-medium transition-colors",
                       pathname.startsWith("/services")
-                        ? "text-primary bg-accent"
-                        : "text-gray-700 hover:text-primary"
+                        ? "text-white bg-secondary"
+                        : "text-blue-100 hover:text-white hover:bg-white/10"
                     )}>
                       Services
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 bg-white">
                         {servicesDropdown.map((service) => {
                           const Icon = service.icon
                           return (
                             <li key={service.href}>
                               <Link href={service.href} legacyBehavior passHref>
-                                <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group">
+                                <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary/10 hover:text-primary focus:bg-secondary/10 focus:text-primary group">
                                   <div className="flex items-center gap-2">
-                                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
                                       <Icon className="w-4 h-4" />
                                     </div>
-                                    <div className="text-sm font-medium leading-none">{service.label}</div>
+                                    <div className="text-sm font-medium leading-none text-primary">{service.label}</div>
                                   </div>
-                                  <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
+                                  <p className="line-clamp-2 text-sm leading-snug text-gray-600 mt-2">
                                     Professional {service.label.toLowerCase()} services
                                   </p>
                                 </NavigationMenuLink>
@@ -134,7 +135,7 @@ export function Navigation({ onGetQuote }: NavigationProps) {
 
               <Button
                 onClick={onGetQuote}
-                className="bg-primary hover:bg-primary/90 ml-2"
+                className="bg-secondary hover:bg-secondary/90 text-white ml-2"
               >
                 Get a Quote
               </Button>
@@ -142,7 +143,7 @@ export function Navigation({ onGetQuote }: NavigationProps) {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors"
+              className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -158,7 +159,7 @@ export function Navigation({ onGetQuote }: NavigationProps) {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div
-          className="fixed inset-0 z-40 bg-white md:hidden"
+          className="fixed inset-0 z-40 bg-primary md:hidden"
           initial={{ opacity: 0, x: "100%" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "100%" }}
@@ -175,8 +176,8 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                 <Link
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-2xl font-semibold hover:text-primary transition-colors ${
-                    pathname === item.href ? 'text-primary' : 'text-gray-700'
+                  className={`text-2xl font-semibold hover:text-secondary transition-colors ${
+                    pathname === item.href ? 'text-secondary' : 'text-white'
                   }`}
                 >
                   {item.label}
@@ -194,7 +195,7 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                   setIsMobileMenuOpen(false)
                 }}
                 size="lg"
-                className="bg-primary hover:bg-primary/90"
+                className="bg-secondary hover:bg-secondary/90 text-white"
               >
                 Get a Quote
               </Button>

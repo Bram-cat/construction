@@ -21,6 +21,7 @@ const config: Config = {
       fontFamily: {
         sans: ['Chillax', 'sans-serif'],
         chillax: ['Chillax', 'sans-serif'],
+        technor: ['Technor', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -29,12 +30,12 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#004C97",
+          DEFAULT: "#001a33",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#FFD700",
-          foreground: "#004C97",
+          DEFAULT: "#0066CC",
+          foreground: "#ffffff",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

@@ -1,34 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle, Heart, Shield, Users } from "lucide-react"
+import { Award, Heart, Shield, Users, Building2, Handshake } from "lucide-react"
 
 const values = [
   {
-    icon: Heart,
-    title: "Quality Service",
-    description: "We take pride in delivering exceptional results every time"
+    icon: Shield,
+    title: "Licensed & Insured",
+    description: "Fully licensed and insured for your peace of mind"
+  },
+  {
+    icon: Award,
+    title: "Quality Craftsmanship",
+    description: "Exceptional workmanship on every project, big or small"
   },
   {
     icon: Users,
-    title: "Local Team",
-    description: "Proudly operated by PEI locals who care about our community"
+    title: "Local Expertise",
+    description: "Proudly serving Prince Edward Island communities"
   },
   {
-    icon: Shield,
-    title: "Trusted & Reliable",
-    description: "Licensed, insured, and committed to your satisfaction"
-  },
-  {
-    icon: CheckCircle,
-    title: "Attention to Detail",
-    description: "No job is complete until every detail meets our high standards"
+    icon: Handshake,
+    title: "Customer Focused",
+    description: "Building lasting relationships through quality service"
   }
 ]
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -37,43 +37,48 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              About Washly
+            <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4 font-technor">
+              ABOUT US
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 font-technor">
+              Building Excellence Since Day One
             </h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              At <span className="font-semibold text-primary">Washly Washing Services</span>, we believe in making your property shine brighter together. As a locally operated business in Prince Edward Island, we understand the unique cleaning needs of our community.
+              At <span className="font-semibold text-primary">BernMar Construction</span>, we&apos;re dedicated to delivering exceptional construction services across Prince Edward Island. With years of experience and a commitment to quality, we transform visions into reality.
             </p>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Our commitment to quality and customer satisfaction drives everything we do. Whether it&apos;s cleaning windows, gutters, or pressure washing your driveway, we treat every job with the same level of care and professionalism.
+              Whether you&apos;re building your dream home, expanding your business, or renovating an existing space, our experienced team brings expertise, professionalism, and attention to detail to every project.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              We use environmentally friendly products and the latest cleaning techniques to ensure your property looks its best while protecting the environment we all share.
+              We take pride in using quality materials, proven construction methods, and maintaining clear communication throughout every phase of your project. Your satisfaction is our top priority.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             {values.map((value, index) => {
               const Icon = value.icon
               return (
                 <motion.div
                   key={index}
-                  className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border border-blue-100 hover:shadow-lg transition-shadow"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white p-6 rounded-xl shadow-lg border-2 border-gray-100 hover:border-secondary/20 hover:shadow-xl transition-all duration-300"
                 >
-                  <Icon className="w-10 h-10 text-primary mb-3" />
-                  <h3 className="font-semibold text-lg text-primary mb-2">
+                  <div className="w-12 h-12 bg-gradient-to-br from-secondary to-blue-400 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-2 font-technor">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 leading-relaxed">
                     {value.description}
                   </p>
                 </motion.div>

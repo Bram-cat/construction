@@ -7,31 +7,31 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Washly Washing Services | Professional Cleaning in PEI",
-  description: "Professional window cleaning, gutter cleaning, pressure washing, and roof cleaning services in Prince Edward Island. Call us today for a free quote! Pathik: (705) 822-8605, Atmiya: (705) 970-4920",
+  title: "BernMar Construction | Quality Construction Services in PEI",
+  description: "Professional construction services in Prince Edward Island. Specializing in residential and commercial projects, renovations, custom builds, and more. Quality craftsmanship you can trust.",
   keywords: [
-    "window cleaning PEI",
-    "gutter cleaning Prince Edward Island",
-    "pressure washing PEI",
-    "roof cleaning",
-    "house washing",
-    "driveway cleaning",
-    "cleaning services PEI",
-    "Washly Washing Services"
+    "construction PEI",
+    "renovations Prince Edward Island",
+    "home building PEI",
+    "commercial construction",
+    "residential construction",
+    "custom builds",
+    "construction services PEI",
+    "BernMar Construction"
   ],
-  authors: [{ name: "Washly Washing Services" }],
+  authors: [{ name: "BernMar Construction" }],
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://washlywashing.com",
-    title: "Washly Washing Services | Professional Cleaning in PEI",
-    description: "Professional cleaning services that make your property shine brighter. Serving Prince Edward Island with quality window cleaning, gutter cleaning, pressure washing, and roof cleaning.",
-    siteName: "Washly Washing Services",
+    url: "https://bernmarconstruction.com",
+    title: "BernMar Construction | Quality Construction Services in PEI",
+    description: "Professional construction services in Prince Edward Island. Building excellence with quality craftsmanship and dedicated service.",
+    siteName: "BernMar Construction",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Washly Washing Services | Professional Cleaning in PEI",
-    description: "Professional cleaning services in Prince Edward Island. Window cleaning, gutter cleaning, pressure washing, and roof cleaning.",
+    title: "BernMar Construction | Quality Construction Services in PEI",
+    description: "Professional construction services in Prince Edward Island. Quality craftsmanship you can trust.",
   },
   robots: "index, follow",
 }

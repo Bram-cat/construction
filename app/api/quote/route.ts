@@ -67,10 +67,10 @@ export async function POST(request: NextRequest) {
     if (resend) {
       try {
         await resend.emails.send({
-        from: 'Washly Washing Services <onboarding@resend.dev>',
-        to: [process.env.CONTACT_EMAIL || 'vsbharaniram5@gmail.com'],
-        subject: `New Quote Request from ${name} - ${service}`,
-        html: `
+          from: 'Washly Washing Services <onboarding@resend.dev>',
+          to: [process.env.CONTACT_EMAIL || 'vsbharaniram5@gmail.com'],
+          subject: `New Quote Request from ${name} - ${service}`,
+          html: `
           <!DOCTYPE html>
           <html>
             <head>
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
               </div>
             </body>
           </html>
-        `
+          `
         })
       } catch (emailError) {
         console.error('Failed to send email:', emailError)
