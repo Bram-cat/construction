@@ -126,8 +126,8 @@ export function Navigation({ onGetQuote }: NavigationProps) {
                       className={cn(
                         "font-medium transition-colors",
                         pathname.startsWith("/services")
-                          ? "text-white bg-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
-                          : "text-white/95 hover:text-white hover:bg-white/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                          ? "text-black bg-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                          : "text-black/95 hover:text-blue-500 hover:bg-white/10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
                       )}
                     >
                       Services

@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, HardHat, Building2, CheckCircle } from "lucide-react"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, HardHat, Building2, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 interface HeroProps {
-  onGetQuote: () => void
+  onGetQuote: () => void;
 }
 
 const backgroundImages = [
@@ -17,20 +17,25 @@ const backgroundImages = [
   "/images/4.png",
   "/images/5.png",
   "/images/6.png",
-]
+];
 
 export function Hero({ onGetQuote }: HeroProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % backgroundImages.length
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -67,7 +72,9 @@ export function Hero({ onGetQuote }: HeroProps) {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/30">
               <HardHat className="w-5 h-5 text-blue-300" />
-              <span className="text-white text-sm font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">Professional Construction Services in PEI</span>
+              <span className="text-white text-sm font-semibold drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
+                Professional Construction Services in PEI
+              </span>
             </div>
           </motion.div>
 
@@ -77,8 +84,12 @@ export function Hero({ onGetQuote }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-technor leading-tight"
           >
-            <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Building Excellence,</span>{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,102,204,0.5)]">One Project at a Time</span>
+            <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              Building Excellence,
+            </span>{" "}
+            <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(0,102,204,0.5)]">
+              One Project at a Time
+            </span>
           </motion.h1>
 
           <motion.p
@@ -87,7 +98,8 @@ export function Hero({ onGetQuote }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
-            From residential homes to commercial buildings, we deliver quality craftsmanship and reliable service across Prince Edward Island.
+            From residential homes to commercial buildings, we deliver quality
+            craftsmanship and reliable service across Prince Edward Island.
           </motion.p>
 
           <motion.div
@@ -107,8 +119,12 @@ export function Hero({ onGetQuote }: HeroProps) {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6"
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="border-2 border-white text-black hover:bg-blue-500 hover:text-black text-lg px-8 py-6"
             >
               Our Services
             </Button>
@@ -154,5 +170,5 @@ export function Hero({ onGetQuote }: HeroProps) {
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }
